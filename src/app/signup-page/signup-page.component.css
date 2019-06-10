@@ -1,0 +1,26 @@
+.inscription::before {
+  content: "....................................................................................................................................................";
+  color: #fff;
+  display: block; 
+  margin: 0 0 15px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.custom-control {
+  position: relative;
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.custom-control-input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
