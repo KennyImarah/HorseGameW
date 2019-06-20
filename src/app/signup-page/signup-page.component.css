@@ -1,26 +1,100 @@
 .inscription::before {
   content: "....................................................................................................................................................";
   color: #fff;
-  display: block; 
+  display: block;
   margin: 0 0 15px;
   font-size: 18px;
   text-align: center;
 }
-
-.custom-control {
-  position: relative;
-  display: block;
-  min-height: 1.5rem;
-  padding-left: 1.5rem;
+.inscription {
+  margin-bottom: 32px;
 }
+
+h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+strong {
+  font-size: 18px;
+  font-weight: 700;
+}
+
 
 input[type="checkbox"] {
   box-sizing: border-box;
-  padding: 0;
+  display: inline-block;
+  position: relative;
+  bottom: -7px;
+  margin: 0 15px;
+  height: 24px;
+  width: 24px;
 }
 
-.custom-control-input {
-  position: absolute;
+input[type="radio"] {
+  position: relative;
+  bottom: -10px;
+  height: 32px;
+  width: 32px;
+
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.circle-right {
+  shape-outside: circle(45% at 0% 50%);
+  shape-margin: 10%;
+  width: 250px;
+  height: 300px;
+  float: left;
+}
+
+.circle-left {
+  shape-outside: circle(45% at 100% 50%);
+  shape-margin: 10%;
+  width: 250px;
+  height: 300px;
+  float: right;
+}
+
+.skill-set {
+  background: rgba(74,84,58,.4);
+  border-radius: 24px;
+  width: auto;
+  margin: 5px auto;
+  padding: 10px 15px;
+  color: aliceblue;
+}
+
+.horse-img {
+  width: 300px;
+}
+
+.body-background {
+  background-image: url(https://ca.howrse.com/media/equideo/image/background/body/inscription/background.jpg?73733786);
+  top: 0;
+  background-repeat: no-repeat;
+  width: 100%;
+  left: 0;
   z-index: -1;
-  opacity: 0;
+  background-position: center top;
+  position: absolute;
+  height: 1000px;
 }
