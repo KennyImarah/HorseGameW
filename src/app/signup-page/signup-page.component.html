@@ -1,9 +1,10 @@
 <div class="container">
   <h2 class="text-center">Choose a Horse...</h2>
-  <div class="row d-flex">
+  <div class="row flex-between">
     <div class="col-sm-4">
       <div class="circle-left"></div>
-      <ul class="list-unstyled text-right">
+      <h4 class="text-center">Breeds</h4>
+      <ul class="list-unstyled text-right text-nowrap">
         <li>
           <label>Breed 1<input type="radio" name="breed" checked></label>
         </li>
@@ -33,7 +34,8 @@
     </div>
     <div class="col-sm-4">
       <div class="circle-right"></div>
-      <ul class="list-unstyled">
+      <h4 class="text-center">Coats</h4>
+      <ul class="list-unstyled text-nowrap">
         <li>
           <label><input type="radio" name="color" checked>Color 1</label>
         </li>
@@ -59,7 +61,7 @@
 
   <form>
     <div class="row">
-      <div class="col-sm-6 col-centered">
+      <div class="form-col col-centered">
         <div class="form-group">
           <label class="sr-only" for="login">Login</label>
           <input type="text" class="form-control" id="login" placeholder="Enter Login name">
@@ -68,7 +70,7 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-6 col-centered">
+      <div class="form-col col-centered">
         <div class="form-group">
           <label class="sr-only" for="password">Password</label>
           <input type="password" class="form-control" id="password" placeholder="Password">
@@ -101,7 +103,7 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-6 col-centered">
+      <div class="form-col col-centered">
         <div class="form-group">
           <input type="email" class="form-control" id="email" placeholder="Enter email">
         </div>
@@ -116,8 +118,8 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-4 col-centered">
-        <button type="submit" class="btn btn-play btn-lg btn-block">Play</button>
+      <div class="btn-col col-centered">
+        <button type="submit" class="btn btn-play btn-lg btn-block" [routerLink]="['/play']">Play</button>
       </div>
     </div>
   </form>

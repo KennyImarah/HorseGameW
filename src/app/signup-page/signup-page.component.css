@@ -1,9 +1,9 @@
 .inscription::before {
-  content: "....................................................................................................................................................";
+  content: ".............................................................................................................................................";
   color: #fff;
   display: block;
   margin: 0 0 15px;
-  font-size: 18px;
+  font-size: 1.25rem;
   text-align: center;
 }
 .inscription {
@@ -12,31 +12,35 @@
 
 h4 {
   margin: 0;
-  font-size: 15px;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
 strong {
-  font-size: 18px;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 
+label {
+  font-size: 1rem;
+  font-weight: 500;
+}
 
 input[type="checkbox"] {
   box-sizing: border-box;
   display: inline-block;
   position: relative;
-  bottom: -7px;
+  bottom: -.7rem;
   margin: 0 15px;
-  height: 24px;
-  width: 24px;
+  height: 2.4rem;
+  width: 2.4rem;
 }
 
 input[type="radio"] {
   position: relative;
-  bottom: -10px;
-  height: 32px;
-  width: 32px;
+  bottom: -.8rem;
+  height: 2.2rem;
+  width: 2.2rem;
 
 }
 
@@ -45,9 +49,33 @@ input[type="radio"] {
   margin: 0 auto;
 }
 
+.form-col {
+  width: 50%;
+  min-width: 297px;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.btn-col {
+  width: 25%;
+  min-width: 125px;
+}
+
+.col-sm-2 {
+  min-width: 97px;
+  width: 16.66666667%;
+}
+
 .d-flex {
   display: flex;
   justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
 }
 
 .flex-column {
@@ -61,7 +89,7 @@ input[type="radio"] {
 .circle-right {
   shape-outside: circle(45% at 0% 50%);
   shape-margin: 10%;
-  width: 250px;
+  width: 90%;
   height: 300px;
   float: left;
 }
@@ -69,7 +97,7 @@ input[type="radio"] {
 .circle-left {
   shape-outside: circle(45% at 100% 50%);
   shape-margin: 10%;
-  width: 250px;
+  width: 90%;
   height: 300px;
   float: right;
 }
@@ -84,7 +112,7 @@ input[type="radio"] {
 }
 
 .horse-img {
-  width: 300px;
+  max-width: 100%;
 }
 
 .body-background {
@@ -98,3 +126,10 @@ input[type="radio"] {
   position: absolute;
   height: 1000px;
 }
+
+@media screen and (max-width: 770px) {
+  .circle-left, .circle-right {
+    display: none;
+  }
+}
+
