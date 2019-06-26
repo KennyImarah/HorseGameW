@@ -1,67 +1,174 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-3">
-      <ul>
-        <li>breed 1</li>
-        <li>breed 2</li>
-        <li>breed 3</li>
-        <li>breed 4</li>
-        <li>breed 5</li>
-        <li>breed 6</li>
-      </ul>
-    </div>
-    <div class="col-sm-3">
 
+<div class="container">
+    <h2 class="title-h2"> Select a horse.. </h2>
+    <div class="row d-flex">
+        
+        
+        <div class="col-sm-4">
+
+            <div class="circle-left"></div>
+            <h3 class="inscription-legend-1">Breeds</h3>
+                <ul class="list-unstyled text-right">
+
+                    <li>
+                        <label class="selected-items"> Thoroughbred</label><input name="group1" type="radio" />
+                    </li>
+
+                    <li class="selected-items">
+                        <input type="radio" id="color2" class="radio" name="radio-group">
+                        <label class="" for="color2">Arabian Horse</label>
+                    </li>
+
+                    <li class="selected-items">
+                        <input type="radio" id="color2" class="radio" name="radio-group">
+                        <label class="selected-items" for="color2">American Quater Horse</label>
+                    </li>
+
+                    <li class="selected-items">
+                        <input type="radio" id="color2" class="radio" name="radio-group">
+                        <label class="selected-items" for="color2">American Paint Horse</label>
+                    </li>
+
+                    <li class="selected-items">
+                        <input type="radio" id="color2" class="radio" name="radio-group">
+                        <label class="selected-items" for="color2">Friesian Horse</label>
+                    </li>
+
+
+                    <li class="selected-items">
+                        <input type="radio" id="color2" class="radio" name="radio-group">
+                        <label class="selected-items" for="color2"> Tennessee Walking Horse </label>
+                    </li>
+
+                    <li class="selected-items">
+                        <input type="radio" id="color2" class="radio" name="radio-group">
+                        <label class="selected-items" for="color2"> Argentinean Criollo </label>
+                    </li>
+
+                    <li class="selected-items">
+                        <input type="radio" id="color2" class="radio" name="radio-group">
+                        <label class="selected-items" for="color2"> Canadian horse </label>
+                    </li>
+
+                </ul>
+        </div>
+
+        <div class="col-sm-4 flex-column">
+            <img src="https://ca.howrse.com/media/equideo/image/chevaux/adulte/trotteur/normal/300/alz.png" class="transparent horse-img">
+            
+                <h4 class="text-nowrap">Best Skill</h4>
+                <strong class="text-nowrap">Stamina</strong>
+         </div>
+
+
+
+        <div class="col-sm-4">
+
+            <h3 class="inscription-legend-2">Coats</h3>
+            <div class="circle-right"></div>
+            <ul class="list-unstyled">
+
+                <li>
+
+                    <input type="radio" id="color1" class="radio" name="radio-group">
+                    <label class="selected-items" for="color1">Chestnut</label>
+                </li>
+                <li class="selected-items">
+                    <input type="radio" id="color2" class="radio" name="radio-group">
+                    <label class="selected-items" for="color2">Bay</label>
+                </li>
+
+                <li class="selected-items">
+                    <input type="radio" id="color2" class="radio" name="radio-group">
+                    <label class="selected-items" for="color2">Liver Chestnut</label>
+                </li>
+
+                <li class="selected-items">
+                    <input type="radio" id="color2" class="radio" name="radio-group">
+                    <label class="selected-items" for="color2">Dark Bay</label>
+                </li>
+
+                <li class="selected-items">
+                    <input type="radio" id="color2" class="radio" name="radio-group">
+                    <label class="selected-items" for="color2">Cherry Bay</label>
+                </li>
+
+                <li class="selected-items">
+                    <input type="radio" id="color2" class="radio" name="radio-group">
+                    <label class="selected-items" for="color2">Black</label>
+                </li>
+
+                <li class="selected-items">
+                    <input type="radio" id="color2" class="radio" name="radio-group">
+                    <label class="selected-items" for="color2">Flaxen Liver chestnut</label>
+                </li>
+
+            </ul>
+        </div>
     </div>
-    <div class="col-sm-3">
-      <ul>
-        <li>Color 1</li>
-        <li>Color 2</li>
-        <li>Color 3</li>
-        <li>Color 4</li>
-        <li>Color 5</li>
-        <li>Color 6</li>
-      </ul>
+
+    <div class="row">
+        <form class="col-centered" #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+            <div class="form-group col-centered">
+                <label class="sr-only" for="login">Login</label>
+                <input #login="ngModel" ngModel type="text" name="login" class="form-control" id="login" placeholder="Enter Login name">
+            </div>
+
+            <div class="form-group">
+                <label class="sr-only" for="password">Password</label>
+                <input #paswword="ngModel" ngModel name="password" type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+
+            <div class="form-inline form-group">
+                <div class="form-group">
+                    <select class="custom-select" id="birthYear" #year="ngModel" name="year" ngModel>
+                        <option>1990</option>
+                        <option>2000</option>
+                        <option>2001</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select class="custom-select" id="birthMonth" #month="ngModel" name="month" ngModel>
+                        <option>January</option>
+                        <option>February</option>
+                        <option>March</option>
+                        <option>April</option>
+                        <option>May</option>
+                        <option>June</option>
+                        <option>July</option>
+                        <option>August</option>
+                        <option>September</option>
+                        <option>October</option>
+                        <option>November</option>
+                        <option>December</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select class="custom-select" id="birthDay" #day="ngModel" name="date" ngModel>
+                        <option>2</option>
+                        <option>16</option>
+                        <option>  </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" #email="ngModel" name="email" ngModel>
+            </div>
+
+            <div class="inscription">
+                <div class="form-group custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="terms" #checkbox="ngModel" name="checkbox" ngModel>
+                    <label class="custom-control-label" for="terms">I agree with the Terms</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-play" >Play</button>
+
+            
+
+        </form>
     </div>
-  </div>
-  <form>
-    <div class="form-group">
-      <label class="sr-only" for="login">Login</label>
-      <input type="text" class="form-control" id="login" placeholder="Enter Login name">
-    </div>
-    <div class="form-group">
-      <label class="sr-only" for="password">Password</label>
-      <input type="password" class="form-control" id="password" placeholder="Password">
-    </div>
-    <div class="form-inline form-group">
-      <div class="form-group">
-        <select class="custom-select" id="birthYear">
-          <option>1990</option>
-          <option>2000</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <select class="custom-select" id="birthMonth">
-          <option>September</option>
-          <option>June</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <select class="custom-select" id="birthDay">
-          <option>2</option>
-          <option>16</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <input type="email" class="form-control" id="email" placeholder="Enter email">
-    </div>
-    <div class="inscription">
-      <div class="form-group custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="terms">
-        <label class="custom-control-label" for="terms">I agree with the Terms</label>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-play">Play</button>
-  </form>
 </div>
