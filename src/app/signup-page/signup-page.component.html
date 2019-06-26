@@ -1,6 +1,7 @@
 <div class="container">
   <h2 class="text-center">Choose a Horse...</h2>
   <div class="row flex-between">
+
     <div class="col-sm-4">
       <div class="circle-left"></div>
       <h4 class="text-center">Breeds</h4>
@@ -25,6 +26,7 @@
         </li>
       </ul>
     </div>
+
     <div class="col-sm-4 flex-column">
       <img src="https://ca.howrse.com/media/equideo/image/chevaux/adulte/trotteur/normal/300/alz.png" class="transparent horse-img">
       <div class="skill-set text-center">
@@ -32,6 +34,7 @@
         <strong class="text-nowrap">Trot</strong>
       </div>
     </div>
+
     <div class="col-sm-4">
       <div class="circle-right"></div>
       <h4 class="text-center">Coats</h4>
@@ -59,12 +62,12 @@
   </div>
   <h2 class="text-center">...and create your account.</h2>
 
-  <form>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="form-col col-centered">
         <div class="form-group">
           <label class="sr-only" for="login">Login</label>
-          <input type="text" class="form-control" id="login" placeholder="Enter Login name">
+          <input type="text" class="form-control" formControlName="login" id="login" placeholder="Enter Login name" [class.is-invalid]="login.invalid && login.touched">
         </div>
       </div>
     </div>
@@ -73,28 +76,28 @@
       <div class="form-col col-centered">
         <div class="form-group">
           <label class="sr-only" for="password">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Password">
+          <input type="password" class="form-control" formControlName="password" id="password" placeholder="Password">
         </div>
       </div>
     </div>
 
-    <div class="row d-flex">
+    <div class="row d-flex" formGroupName="DoB">
       <div class="form-group col-sm-2">
-        <select class="form-control" id="birthDay">
+        <select class="form-control" formControlName="day" id="birthDay">
           <option>Day</option>
           <option>2</option>
           <option>16</option>
         </select>
       </div>
       <div class="form-group col-sm-2">
-        <select class="form-control" id="birthMonth">
+        <select class="form-control" formControlName="month" id="birthMonth">
           <option>Month</option>
           <option>September</option>
           <option>June</option>
         </select>
       </div>
       <div class="form-group col-sm-2">
-        <select class="form-control" id="birthYear">
+        <select class="form-control" formControlName="year" id="birthYear">
           <option>Year</option>
           <option>1990</option>
           <option>2000</option>
@@ -105,21 +108,21 @@
     <div class="row">
       <div class="form-col col-centered">
         <div class="form-group">
-          <input type="email" class="form-control" id="email" placeholder="Enter email">
+          <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter email">
         </div>
       </div>
     </div>
-
+    
     <div class="inscription">
       <div class="form-check text-center">
-        <input type="checkbox" class="form-check-input" id="terms">
+        <input type="checkbox" class="form-check-input" formControlName="terms" id="terms">
         <label class="form-check-label" for="terms">I have read agree with the Terms and Conditions</label>
       </div>
     </div>
-
+    
     <div class="row">
       <div class="btn-col col-centered">
-        <button type="submit" class="btn btn-play btn-lg btn-block" [routerLink]="['/play']">Play</button>
+        <button type="submit" [disabled]="!signupForm.valid" class="btn btn-play btn-lg btn-block">Play</button>
       </div>
     </div>
   </form>

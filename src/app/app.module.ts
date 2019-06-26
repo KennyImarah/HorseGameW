@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { FarmComponent } from './farm/farm.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   //basic routes
@@ -23,6 +24,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
