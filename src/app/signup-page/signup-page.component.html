@@ -6,23 +6,8 @@
       <div class="circle-left"></div>
       <h4 class="text-center">Breeds</h4>
       <ul class="list-unstyled text-right text-nowrap">
-        <li>
-          <label>Breed 1<input type="radio" name="breed" checked></label>
-        </li>
-        <li>
-          <label>Breed 2<input type="radio" name="breed"></label>
-        </li>
-        <li>
-          <label>Breed 3<input type="radio" name="breed"></label>
-        </li>
-        <li>
-          <label>Breed 4<input type="radio" name="breed"></label>
-        </li>
-        <li>
-          <label>Breed 5<input type="radio" name="breed"></label>
-        </li>
-        <li>
-          <label>Breed 6<input type="radio" name="breed"></label>
+        <li *ngFor="let breed of allBreeds">
+          <label>{{breed.breed}}<input type="radio" name="breed"></label>
         </li>
       </ul>
     </div>
@@ -39,23 +24,8 @@
       <div class="circle-right"></div>
       <h4 class="text-center">Coats</h4>
       <ul class="list-unstyled text-nowrap">
-        <li>
-          <label><input type="radio" name="color" checked>Color 1</label>
-        </li>
-        <li>
-          <label><input type="radio" name="color">Color 2</label>
-        </li>
-        <li>
-          <label><input type="radio" name="color">Color 3</label>
-        </li>
-        <li>
-          <label><input type="radio" name="color">Color 4</label>
-        </li>
-        <li>
-          <label><input type="radio" name="color">Color 5</label>
-        </li>
-        <li>
-          <label><input type="radio" name="color">Color 6</label>
+        <li *ngFor="let color of allColors">
+          <label><input type="radio" name="color">{{color.color}}</label>
         </li>
       </ul>
     </div>

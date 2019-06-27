@@ -4,6 +4,11 @@ import {
   Validators
 } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Breed } from '../breed';
+import { Color } from '../color';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup-page',
@@ -11,8 +16,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./signup-page.component.css']
 })
 export class SignupPageComponent implements OnInit {
-  
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  breeds: Breed[] = [];
+  allBreeds: Breed[];
+
+  // colors 
+  colors: Color[] = [];
+  allColors: Color[]; 
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) { }
   //these are some getters to help with readability in the html
   get login() {
     return this.signupForm.get('login');
@@ -25,7 +35,12 @@ export class SignupPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    // makeHeaders();
+    console.log('success');
+    this.allBreeds = this.getBreeds();
+    this.allColors = this.getColors();
   }
+
   signupForm = this.fb.group({
     login: ['', [Validators.required, Validators.minLength(3)]],
     password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z\d$@$!%*?&].{8,}')]],//length of at least 8 aplhanumeric characters. Must contain lowercase uppercase and a number can contain special characters
@@ -38,14 +53,60 @@ export class SignupPageComponent implements OnInit {
     terms: ['', [Validators.requiredTrue]]
   })
 
+  getBreeds(): Breed[] {
+    this.http
+      .get<{ [key: string]: any }>('http://avellinfalls.com/home/new_account_display_breeds')
+      .pipe(
+        map(responseData => {
+          let dataBreed: any;
+          for (const key in responseData) {
+            if (responseData.hasOwnProperty(key)) {
+              dataBreed = responseData[key]
+            }
+          }
+          return dataBreed;
+        }))
+      .subscribe(data => {
+        let br = data as Array<Breed>;
+        for (let i = 0; i < br.length; i++) {
+          let breed = new Breed(br[i].id, br[i].breed, br[i].breed_id);
+          this.breeds.push(breed);
+        }
+      })
+    return this.breeds;
+  }
+
+  getColors(): Color[] {
+    this.http
+      .get<{ [key: string]: any }>('http://avellinfalls.com/home/new_account_display_colors')
+      .pipe(
+        map(responseData => {
+          let dataColor: any;
+          for (const key in responseData) {
+            if (responseData.hasOwnProperty(key)) {
+              dataColor = responseData[key]
+            }
+          }
+          return dataColor;
+        }))
+      .subscribe(data => {
+        let cl = data as Array<Color>;
+        for (let i = 0; i < cl.length; i++) {
+          let color = new Color(cl[i].id, cl[i].color, cl[i].color_id);
+          this.colors.push(color);
+        }
+      })
+    return this.colors;
+  }
+
   onSubmit() {
     console.log(this.signupForm.value);
     this.http
       .post(
         'http://avellinfalls.com/home/add_new_user',
-        JSON.stringify(
-          "login", this.login.value
-        )
+        {
+          "login": this.login.value
+        }
       )
       .subscribe(
         (val) => {
@@ -58,5 +119,7 @@ export class SignupPageComponent implements OnInit {
         () => {
           console.log("The POST observable is now completed.");
         });
+
+    this.router.navigate(['/play']);
   }
 }

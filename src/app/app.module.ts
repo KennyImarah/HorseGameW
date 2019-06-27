@@ -8,7 +8,6 @@ import { FarmComponent } from './farm/farm.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-//import { Observable } from 'rxjs';
 
 
 const routes: Routes = [
@@ -29,7 +28,6 @@ const routes: Routes = [
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    //Observable,
     RouterModule.forRoot(routes)
   ],
   providers: [],
