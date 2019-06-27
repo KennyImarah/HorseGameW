@@ -7,6 +7,9 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import { FarmComponent } from './farm/farm.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+//import { Observable } from 'rxjs';
+
 
 const routes: Routes = [
   //basic routes
@@ -25,6 +28,8 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    //Observable,
     RouterModule.forRoot(routes)
   ],
   providers: [],
