@@ -31,7 +31,7 @@ export class SignupPageComponent implements OnInit {
     return this.signupForm.get('password');
   }
   get email() {
-    return this.signupForm.get('password');
+    return this.signupForm.get('email');
   }
 
   ngOnInit() {
