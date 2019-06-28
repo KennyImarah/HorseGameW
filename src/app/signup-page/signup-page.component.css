@@ -164,6 +164,19 @@ input[type="radio"] {
   height: 1000px;
 }
 
+/* this is disclaimers */
+.custom-control-label {
+  color: white;
+  margin: 8px 8px 8px 8px;
+  display: block;
+  position: relative;
+  min-height: 1.5rem;
+  padding-left: 1.5rem;
+  font-size: 15px;
+  text-align: center;
+  font-weight: normal;
+}
+
 @media screen and (max-width: 770px) {
   .circle-left, .circle-right {
     display: none;
