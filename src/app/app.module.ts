@@ -9,7 +9,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
 const routes: Routes = [
   //basic routes
   { path: '', redirectTo: 'home', pathMatch: 'full' },
