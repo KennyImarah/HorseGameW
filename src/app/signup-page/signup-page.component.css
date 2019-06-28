@@ -45,6 +45,11 @@ input[type="radio"] {
 }
 
 .error-msg {
+  position: absolute;
+  left: 75%;
+  align-self: center;
+  color: rgba(200, 18, 18, 0.80);
+  font-weight: 600;
 }
 
 .is-invalid {
@@ -102,6 +107,9 @@ input[type="radio"] {
   align-items: center;
 }
 
+.btn[disabled] {
+  opacity: .3;
+}
 
 .circle-right {
   shape-outside: circle(50% at 0% 50%);

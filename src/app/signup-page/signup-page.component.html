@@ -33,7 +33,7 @@
   <h2 class="text-center">...and create your account.</h2>
 
   <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-    <div class="row">
+    <div class="row d-flex">
       <div class="form-col col-centered">
         <div class="form-group">
           <label class="sr-only" for="login">Login</label>
@@ -48,11 +48,17 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row d-flex">
       <div class="form-col col-centered">
         <div class="form-group">
           <label class="sr-only" for="password">Password</label>
           <input type="password" class="form-control" formControlName="password" id="password" placeholder="Password" [class.is-invalid]="password.invalid && password.touched">
+        </div>
+      </div>
+      <div class="error-msg">
+        <div *ngIf="password.invalid && password.touched">
+          <div *ngIf="password.errors?.required" class="">Password is required</div>
+          <div *ngIf="password.errors?.pattern" class="">Password must contain an Uppercase and Lowercase letter, a number, and at least 8 characters</div>
         </div>
       </div>
     </div>
@@ -81,10 +87,16 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row d-flex">
       <div class="form-col col-centered">
         <div class="form-group">
           <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter email" [class.is-invalid]="email.invalid && email.touched">
+        </div>
+      </div>
+      <div class="error-msg">
+        <div *ngIf="email.invalid && email.touched">
+          <div *ngIf="email.errors?.required" class="">Email is required</div>
+          <div *ngIf="email.errors?.email" class="">Not a valid Email</div>
         </div>
       </div>
     </div>
