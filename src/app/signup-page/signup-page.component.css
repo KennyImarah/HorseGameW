@@ -11,7 +11,12 @@
   margin-bottom: 32px;
 }
 
+h2 {
+  color: white;
+}
+
 h4 {
+  color: white;
   margin: 0;
   font-size: 1.2rem;
   font-weight: 500;
@@ -25,6 +30,7 @@ strong {
 label {
   font-size: 1rem;
   font-weight: 500;
+  color: white;
 }
 
 input[type="checkbox"] {
@@ -138,6 +144,12 @@ input[type="radio"] {
 
 .horse-img {
   max-width: 100%;
+}
+
+/* coloured links on disclaimers */
+.link-style {
+  display: inline-block;
+  color: #e5ff70;
 }
 
 .body-background {
