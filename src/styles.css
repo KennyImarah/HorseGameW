@@ -2,12 +2,15 @@
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 
 body {
-  background-color: #BFD16C;
+    background-image: url(https://ca.howrse.com/media/equideo/image/background/body/inscription/background.jpg?73733786);
+    padding-bottom:10px;
+
 }
 
 .btn-play {
-  color: #f2f2f2;
-  background-color: #748042;
-  border-color: #656f3b;
-  font-weight: 600;
+    color: #f2f2f2;
+    background-color: #748042;
+    border-color: #656f3b;
+    font-weight: 600;
+    align-content: center;
 }

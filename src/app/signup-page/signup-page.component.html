@@ -1,5 +1,6 @@
 
-<div class="container">
+
+<div class="container-fluid">
     <h2 class="title-h2"> Select a horse.. </h2>
     <div class="row d-flex">
         
@@ -15,8 +16,9 @@
                     </li>
 
                     <li class="selected-items">
-                        <input type="radio" id="color2" class="radio" name="radio-group">
-                        <label class="" for="color2">Arabian Horse</label>
+                        <label for="huey">Arabian Horse</label>
+                        <input type="radio" id="huey" name="drone" value="huey"
+                               checked>
                     </li>
 
                     <li class="selected-items">
@@ -108,15 +110,18 @@
     </div>
 
     <div class="row">
+
+        <h2 class="title-h2">...and create your account </h2>
+
         <form class="col-centered" #f="ngForm" (ngSubmit)="onSubmit(f)">
 
             <div class="form-group col-centered">
                 <label class="sr-only" for="login">Login</label>
-                <input #login="ngModel" ngModel type="text" name="login" class="form-control" id="login" placeholder="Enter Login name">
+                <input #login="ngModel" ngModel type="text" name="login" class="form-control" id="login" placeholder="Login name">
             </div>
 
             <div class="form-group">
-                <label class="sr-only" for="password">Password</label>
+                (Strength: ? )<label class="sr-only" for="password">Password</label>
                 <input #paswword="ngModel" ngModel name="password" type="password" class="form-control" id="password" placeholder="Password">
             </div>
 
@@ -128,7 +133,7 @@
                         <option>2001</option>
                     </select>
                 </div>
-
+                
                 <div class="form-group">
                     <select class="custom-select" id="birthMonth" #month="ngModel" name="month" ngModel>
                         <option>January</option>
@@ -159,16 +164,24 @@
                 <input type="email" class="form-control" id="email" placeholder="Enter email" #email="ngModel" name="email" ngModel>
             </div>
 
+            <h5 class="title-h2">Enter the login name of the person who introduced you to Howrse here.</h5>
+
+            <div class="form-group col-centered">
+                <label class="sr-only" for="login">Login</label>
+                <input #login="ngModel" ngModel type="text" name="login" class="form-control" id="login" placeholder="Referred by (option) ">
+            </div>
+
+            <hr />
+
             <div class="inscription">
                 <div class="form-group custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="terms" #checkbox="ngModel" name="checkbox" ngModel>
-                    <label class="custom-control-label" for="terms">I agree with the Terms</label>
+                    <label class="custom-control-label" for="terms">I have read and agree to the Terms and Conditions of Use, the End User License Agreement and the Privacy Policy</label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-play" >Play</button>
 
-            
-
+            <button type="submit" class="btn btn-play">Play</button>
+                       
         </form>
     </div>
 </div>

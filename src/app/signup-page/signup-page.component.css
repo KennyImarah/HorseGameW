@@ -68,15 +68,15 @@ strong {
 }
 
 .body-background {
-    background-image: url(https://ca.howrse.com/media/equideo/image/background/body/inscription/background.jpg?73733786);
+    
     top: 0;
     background-repeat: no-repeat;
     width: 100%;
     left: 0;
     z-index: -1;
-    background-position: center top;
+    background-position: center ;
     position: absolute;
-    height: 1000px;
+    height: auto;
 }
 
 ol, ul {
@@ -129,14 +129,29 @@ ol, ul {
 }
 
 form {
+    padding-top: 70px;
     margin: 22px 0;
-    width: 300px;
+    width: 350px;
+    margin-left: 520px;
 }
 
-.row{
+::placeholder{
+    color: #ffd800;
+}
+
+.row {
     justify-content: center;
     -webkit-justify-content: center;
 }
 .form-group{
-    margin-right: 10px;
+    margin-right: 20px;
+    
+}
+
+button{
+    align-items: center;
+}
+
+.form-inline{
+    padding-left:60px;
 }
