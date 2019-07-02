@@ -7,7 +7,7 @@
   z-index: 102;
   position: relative;
   border-collapse: collapse;
-  font-size: 1.2rem;
+  font-size: 14px;
 }
 
 .widget-item {
@@ -19,8 +19,9 @@
   border-radius: 7px 7px 0 0;
   border-top: none;
   line-height: 1.4rem;
-  font-size: 1.3rem;
+  font-size: 15px;
   text-align: center;
+  color: #630;
 }
 
 .body-background {
@@ -33,4 +34,16 @@
   background-position: center top;
   position: absolute;
   height: 1000px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.spacer-small-right {
+  margin-right: 5px;
+}
+
+.h2, .h3, b, h2, h3, strong {
+  font-weight: 700;
 }
