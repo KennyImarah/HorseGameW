@@ -8,6 +8,7 @@ import { FarmComponent } from './farm/farm.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailBoxComponent } from './detail-box/detail-box.component';
 
 const routes: Routes = [
   //basic routes
@@ -20,7 +21,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     SignupPageComponent,
-    FarmComponent
+    FarmComponent,
+    DetailBoxComponent
   ],
   imports: [
     BrowserModule,
