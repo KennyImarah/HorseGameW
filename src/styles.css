@@ -5,6 +5,16 @@ body {
   background-color: #BFD16C;
 }
 
+.box-content {
+  background-color: #f6f3b0;
+  border: 2px solid #e2da78;
+  position: relative;
+  z-index: 3;
+  top: -3px;
+  border-radius: 0 7px 7px 7px;
+  box-shadow: #fbf7b9 1px 1px inset, #fbf7b9 -1px -1px inset;
+}
+
 .btn-play {
   font-weight: 600;
   background: #e5ff70;

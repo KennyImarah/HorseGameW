@@ -10,7 +10,8 @@
       <h4 class="text-center">Breeds</h4>
       <ul class="list-unstyled text-right text-nowrap">
         <li *ngFor="let breed of allBreeds">
-          <label>{{breed.breed}}<input type="radio" name="breed"></label>
+          <label>{{breed.breed}}<input type="radio" name="breed" 
+            [value]="breed.breed_id"></label>
         </li>
       </ul>
     </div>

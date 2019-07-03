@@ -5,7 +5,7 @@
     <li [class.active]="viewMode == 'bonus'" rel="bonus"><a (click)="viewMode ='bonus'">Bonus</a></li>
   </ul>
 
-  <div class="tab-content" [ngSwitch]="viewMode">
+  <div class="box-content" [ngSwitch]="viewMode">
     <div id="char" *ngSwitchCase="'char'">
       <p>Some content.</p>
     </div>
