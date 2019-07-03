@@ -47,6 +47,6 @@
 .h2, .h3, b, h2, h3, strong {
   font-weight: 700;
   margin: 0;
-  padding: 8px;
+  padding: 10px 2px 10px 2px;
 }
 
