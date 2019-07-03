@@ -60,7 +60,9 @@ export class SignupPageComponent implements OnInit {
       year: [''],
     }),
     email: ['', [Validators.required, Validators.email]],
-    terms: ['', [Validators.requiredTrue]]
+    terms: ['', [Validators.requiredTrue]],
+    breed: [''],
+    color: ['']
   })
 
   getBreeds(): Breed[] {
@@ -130,14 +132,14 @@ export class SignupPageComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signupForm.value);
-      this.userService.createUser(this.signupForm.value)
-        .then(
-          res => {
-            //this.resetFields();
-            this.router.navigate(['/play']);
-            //this.router.navigate(['/home']);
-          }
-        )
+      //this.userService.createUser(this.signupForm.value)
+      //  .then(
+      //    res => {
+      //      //this.resetFields();
+      //      this.router.navigate(['/play']);
+      //      //this.router.navigate(['/home']);
+      //    }
+      //  )
      //Julias backend
     //this.http
     //  .post(
