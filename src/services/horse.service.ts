@@ -12,14 +12,33 @@ export class HorseService {
     return Math.floor((Math.random() * 100) + 1);
   }
 
-  createRandomHorse(value) {
+  createRandomHorse(value, userId) {
     let stamina = this.getRandStat();
+    let speed = this.getRandStat();
+    let gallop = this.getRandStat();
+    let trot = this.getRandStat();
+    let jumping = this.getRandStat();
+    
+
     return this.db.collection('horses').add({
-      breed: value.breed_id,
-      color: value.color_id,
+      breed: value.breed,
+      color: value.color,
       name: 'Strawberry',
       gender: 'mare',
-
+      userId: userId,
+      stamina: stamina,
+      speed: speed,
+      gallop: gallop,
+      trot: trot,
+      jumping: jumping,
+      energy: 100,
+      health: 100,
+      morale: 100,
+      tr_stamina: 0,
+      tr_speed: 0,
+      tr_gallop: 0,
+      tr_trot: 0,
+      tr_jumping: 0
     });
   }
 

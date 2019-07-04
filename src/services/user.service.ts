@@ -46,11 +46,11 @@ export class UserService {
       password: value.password,
       email: value.email,
       terms: value.terms,
-      breed_id: value.breed,
-      color_id: value.color
+      
       //nameToSearch: value.name.toLowerCase(),
       //surname: value.surname,
       //age: parseInt(value.age),
     });
+
   }
 }
