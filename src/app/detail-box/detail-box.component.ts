@@ -12,7 +12,4 @@ export class DetailBoxComponent implements OnInit {
 
   ngOnInit() {
   }
-
-
-
 }
