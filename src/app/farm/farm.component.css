@@ -24,6 +24,10 @@
   color: #630;
 }
 
+#care-header, #night-header, #mission-header, #rides-header, #competitions-header, #breeding-header {
+  opacity: 0.4;
+}
+
 .body-background {
   background-image: url(https://ca.howrse.com/media/equideo/image/background/body/default/body-background-landing-prairie.jpg);
   top: 0;
@@ -40,10 +44,13 @@
   white-space: nowrap;
 }
 
-.spacer-small-right {
+/*.spacer-small-right {
   margin-right: 5px;
-}
+}*/
 
 .h2, .h3, b, h2, h3, strong {
   font-weight: 700;
+  margin: 0;
+  padding: 10px 2px 10px 2px;
 }
+
