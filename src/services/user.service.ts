@@ -8,9 +8,9 @@ export class UserService {
 
   constructor(public db: AngularFirestore) {}
 
-  getAvatars(){
-      return this.db.collection('/avatar').valueChanges()
-  }
+  //getAvatars(){
+  //    return this.db.collection('/avatar').valueChanges()
+  // } 
 
   getUser(userKey){
     return this.db.collection('users').doc(userKey).snapshotChanges();
@@ -46,11 +46,11 @@ export class UserService {
       password: value.password,
       email: value.email,
       terms: value.terms,
-      breed_id: value.breed,
-      color_id: value.color
+      
       //nameToSearch: value.name.toLowerCase(),
       //surname: value.surname,
       //age: parseInt(value.age),
     });
+
   }
 }
