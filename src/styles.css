@@ -13,6 +13,8 @@ body {
   top: -3px;
   border-radius: 0 7px 7px 7px;
   box-shadow: #fbf7b9 1px 1px inset, #fbf7b9 -1px -1px inset;
+  color: #003a0e;
+  font-size: 1.1rem;
 }
 
 .btn-play {

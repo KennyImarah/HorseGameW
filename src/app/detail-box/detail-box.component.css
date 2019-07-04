@@ -7,6 +7,7 @@
   border: 2px solid #e2da78;
   position: relative;
   box-shadow: #fbf7b9 1px 1px inset, #fbf7b9 -1px 0 inset;
+  color: #643100;
 }
 
 .nav-tabs > li.active > a {
@@ -28,4 +29,18 @@
 
 .nav-tabs {
   border: 0;
+}
+
+.flex-row-between {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffdf;
+}
+
+.breed {
+  color: #930055;
+}
+
+.table-bordered {
+  margin-top: 1.4rem;
 }
