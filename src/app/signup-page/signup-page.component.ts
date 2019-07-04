@@ -135,7 +135,7 @@ export class SignupPageComponent implements OnInit {
       this.userService.createUser(this.signupForm.value)
         .then(
           res => {
-            this.resetFields();
+            //this.resetFields();
           this.router.navigate(['/play']);
             //this.router.navigate(['/home']);
           }

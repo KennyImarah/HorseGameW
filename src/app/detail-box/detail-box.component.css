@@ -43,4 +43,21 @@
 
 .table-bordered {
   margin-top: 1.4rem;
+  border-color: #e2da78;
+}
+
+.table {
+  background-color: #fcfabf;
+}
+
+.table-bordered > thead > tr > th {
+  border-color: #e2da78;
+}
+
+.table-bordered > thead > tr > th:first-child {
+  border-left: 0;
+}
+
+.table-bordered > thead > tr > th:last-child {
+  border-right: 0;
 }
