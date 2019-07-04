@@ -60,7 +60,9 @@ export class SignupPageComponent implements OnInit {
       year: [''],
     }),
     email: ['', [Validators.required, Validators.email]],
-    terms: ['', [Validators.requiredTrue]]
+    terms: ['', [Validators.requiredTrue]],
+    breed: [''],
+    color: ['']
   })
 
   getBreeds(): Breed[] {
@@ -133,8 +135,8 @@ export class SignupPageComponent implements OnInit {
       this.userService.createUser(this.signupForm.value)
         .then(
           res => {
-            //this.resetFields();
-            this.router.navigate(['/play']);
+            this.resetFields();
+          this.router.navigate(['/play']);
             //this.router.navigate(['/home']);
           }
         )
