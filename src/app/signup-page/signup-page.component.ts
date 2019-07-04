@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { BreedService } from '../../services/breed.service';
 import { ColorService } from '../../services/color.service';
+import { HorseService } from '../../services/horse.service';
+import { resolve } from 'q';
 
 @Component({
   selector: 'app-signup-page',
@@ -30,7 +32,9 @@ export class SignupPageComponent implements OnInit {
               private router: Router,
               public userService: UserService,
               public breedService: BreedService,
-              public colorService: ColorService) { }
+              public colorService: ColorService,
+              public horseService: HorseService,
+  ) { }
 
   //these are some getters to help with readability in the html
   get login() {
@@ -132,14 +136,16 @@ export class SignupPageComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signupForm.value);
-      this.userService.createUser(this.signupForm.value)
+     this.userService.createUser(this.signupForm.value)
         .then(
           res => {
-            //this.resetFields();
+            console.log(res.id)
+            // Create random horse
+            this.horseService.createRandomHorse(this.signupForm.value, res.id)
           this.router.navigate(['/play']);
             //this.router.navigate(['/home']);
           }
-        )
+    )
      //Julias backend
     //this.http
     //  .post(
