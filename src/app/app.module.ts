@@ -8,6 +8,10 @@ import { FarmComponent } from './farm/farm.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailBoxComponent } from './detail-box/detail-box.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
 const routes: Routes = [
   //basic routes
@@ -20,14 +24,17 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     SignupPageComponent,
-    FarmComponent
+    FarmComponent,
+    DetailBoxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
