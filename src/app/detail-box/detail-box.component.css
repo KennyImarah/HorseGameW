@@ -41,23 +41,34 @@
   color: #930055;
 }
 
-.table-bordered {
-  margin-top: 1.4rem;
-  border-color: #e2da78;
+.horse-info {
+  padding: 1rem;
 }
 
 .table {
+  margin-top: .4rem;
+  border: 0;
+  border-color: #e2da78;
   background-color: #fcfabf;
 }
 
-.table-bordered > thead > tr > th {
-  border-color: #e2da78;
+.table > thead > tr > th {
+  border-top: 2px solid #e2da78;
+  border-bottom: 0;
+  background-image: linear-gradient(#fcfac1, #f6f3b0);
+  padding-bottom: 3px;
 }
 
-.table-bordered > thead > tr > th:first-child {
-  border-left: 0;
+.table > tbody > tr > td {
+  border-top: 0;
+  background-color: #f6f3b0;
+  padding-top: 0;
 }
 
-.table-bordered > thead > tr > th:last-child {
-  border-right: 0;
+.table > thead > tr > th:last-child {
+  border-left: 2px solid #e2da78;
+}
+
+.table > tbody > tr > td:last-child {
+  border-left: 2px solid #e2da78;
 }
