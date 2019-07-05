@@ -32,3 +32,39 @@ body {
   }
 }
 
+.btn-login {
+  float: right;
+  min-width: 140px;
+  margin: 3px;
+  font-weight: 600;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.btn-facebook {
+  font-weight: 600;
+  background: #3b5998;
+  color: #4a543a;
+  margin: 10px;
+}
+
+.login-label {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  padding: 0 20px;
+  line-height: 41px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+}
+
+  .login-label:hover {
+    color: #3b5998;
+    /*background-color: #fff*/
+  }
