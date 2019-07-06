@@ -1,0 +1,44 @@
+.body-background {
+  background-image: url(https://ca.howrse.com/media/equideo/image/background/body/inscription/background.jpg?73733786);
+  top: 0;
+  background-repeat: no-repeat;
+  width: 100%;
+  left: 0;
+  z-index: -1;
+  background-position: center top;
+  position: absolute;
+  height: 1000px;
+}
+
+/*.forgotten-password {*/
+ 
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-col {
+  width: 50%;
+  min-width: 297px;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.password, .email, .form-check-label {
+  margin-bottom: 10px;
+  font-weight: 400;
+  max-width: 50%;
+}
+
+.forgotten-password {
+  font-weight: 400;
+  text-decoration-line: underline;
+}
