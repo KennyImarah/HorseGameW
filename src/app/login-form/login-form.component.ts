@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder }
-  from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-login-form',
@@ -9,6 +9,7 @@ import { FormGroup, FormControl, Validators, FormBuilder }
 })
 export class LoginFormComponent {
   form: FormGroup;
+  public userService: UserService;
 
   firstName = new FormControl("", Validators.required);
     loginEmail: any;
@@ -19,8 +20,15 @@ export class LoginFormComponent {
       "password": ["", Validators.required]
     });
   }
-  onSubmitModelBased() {
+  onSubmit() {
+    
     console.log("form submitted");
     console.log(this.form);
+    this.userService.loginUsers(this.form.value)
+    .subscribe(result => {
+      console.log(result);
+      
+      
+    })
   }
 }

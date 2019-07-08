@@ -15,8 +15,9 @@ import { environment } from '../environments/environment';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginFormComponent } from './login-form/login-form.component';
-import { LoginModalComponent } from './login-modal/login-modal.component';
-
+// import { LoginModalComponent } from './login-modal/login-modal.component';
+import { MatDialogModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   //basic routes
@@ -34,8 +35,7 @@ const routes: Routes = [
     DetailBoxComponent,
     LoginComponent,
     NavbarComponent,
-    LoginFormComponent,
-    LoginModalComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +46,12 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ LoginFormComponent ]
+  entryComponents: [LoginFormComponent
+  ],
 })
 export class AppModule { }
