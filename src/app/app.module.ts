@@ -13,7 +13,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { LoginFormComponent } from './login-form/login-form.component';
-import { LoginModalComponent } from './login-modal/login-modal.component';
 import { MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const routes: Routes = [
@@ -31,7 +30,6 @@ const routes: Routes = [
     FarmComponent,
     DetailBoxComponent,
     LoginFormComponent,
-    LoginModalComponent
   ],
   imports: [
     BrowserModule,
