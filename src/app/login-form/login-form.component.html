@@ -17,8 +17,8 @@
                  [class.is-invalid]="login.invalid && login.touched" />
           <div class="error-msg">
             <div *ngIf="login.invalid && login.touched">
-              <div *ngIf="login.errors?.required" class="">Login name is required</div>
-              <div *ngIf="login.errors?.minlength" class="">Login name must be at least 3 characters</div>
+              <div *ngIf="login.errors?.required" class="">Oops! Login name is required</div>
+              <div *ngIf="login.errors?.minlength" class="">Oops! Login name must be at least 3 characters</div>
             </div>
           </div>
         </div>
@@ -32,8 +32,8 @@
                  [class.is-invalid]="password.invalid && password.touched" />
           <div class="error-msg">
             <div *ngIf="password.invalid && password.touched">
-              <div *ngIf="password.errors?.required" class="">Password is required</div>
-              <div *ngIf="password.errors?.pattern" class="">Password must contain an Uppercase and Lowercase letter, a number, and at least 8 characters</div>
+              <div *ngIf="password.errors?.required" class="">Oops! Password is required</div>
+              <div *ngIf="password.errors?.pattern" class="">Oops! Password must contain uppercase and lowercase letter, number, and at least 8 characters</div>
             </div>
           </div>
         </div>
