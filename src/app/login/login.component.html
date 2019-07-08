@@ -1,12 +1,12 @@
 <button type="button" class="btn btn-login" (click)="signIn = true">Login</button>
 
 <div *ngIf="signIn == true">
-  
   <div class="login-box">
     <div class="triangle-up"></div>
     <a class="glyphicon glyphicon-remove close" (click)="signIn = false"></a>
     <button class="btn btn-primary btn-block">Log in with Facebook</button>
     <div class="divider">or</div>
+
     <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
       <div class="form-group">
         <input type="text" formControlName="login" placeholder="Login" class="form-control" required>
