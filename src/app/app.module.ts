@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { FarmComponent } from './farm/farm.component';
 import { RouterModule, Routes } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailBoxComponent } from './detail-box/detail-box.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { LoginComponent } from './login/login.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
   //basic routes
@@ -25,12 +27,15 @@ const routes: Routes = [
     AppComponent,
     SignupPageComponent,
     FarmComponent,
-    DetailBoxComponent
+    DetailBoxComponent,
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebase),
