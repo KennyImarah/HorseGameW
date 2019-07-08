@@ -14,12 +14,16 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { LoginModalComponent } from './login-modal/login-modal.component';
+
 
 const routes: Routes = [
   //basic routes
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: SignupPageComponent },
-  { path: 'play', component: FarmComponent }
+  { path: 'play', component: FarmComponent },
+  { path: 'login', component: LoginFormComponent }
 ];
 
 @NgModule({
@@ -29,7 +33,9 @@ const routes: Routes = [
     FarmComponent,
     DetailBoxComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginFormComponent,
+    LoginModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +48,7 @@ const routes: Routes = [
     AngularFirestoreModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ LoginFormComponent ]
 })
 export class AppModule { }

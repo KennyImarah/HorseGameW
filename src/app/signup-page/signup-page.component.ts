@@ -34,6 +34,7 @@ export class SignupPageComponent implements OnInit {
               public breedService: BreedService,
               public colorService: ColorService,
               public horseService: HorseService,
+
   ) { }
 
   //these are some getters to help with readability in the html
