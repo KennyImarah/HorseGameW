@@ -14,7 +14,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
-
+import { MatDialogModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const routes: Routes = [
   //basic routes
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -40,9 +41,12 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ LoginFormComponent ]
+  entryComponents: [LoginFormComponent
+  ],
 })
 export class AppModule { }

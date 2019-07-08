@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 
 body {
   background-color: #BFD16C;
@@ -48,8 +49,23 @@ body {
 .btn-facebook {
   font-weight: 600;
   background: #3b5998;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.btn-connection {
+  font-weight: 600;
+  font-size: 16px;
+  background: #e5ff70;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #bfd16c;
   color: #4a543a;
-  margin: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  justify-content: center;
 }
 
 .login-label {

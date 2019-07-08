@@ -14,28 +14,30 @@ import { BreedService } from '../../services/breed.service';
 import { ColorService } from '../../services/color.service';
 import { HorseService } from '../../services/horse.service';
 import { resolve } from 'q';
+import { MatDialog } from '@angular/material';
+import { LoginFormComponent } from '../login-form/login-form.component';
 
 @Component({
   selector: 'app-signup-page',
   templateUrl: './signup-page.component.html',
   styleUrls: ['./signup-page.component.css']
 })
+
 export class SignupPageComponent implements OnInit {
   breeds: Breed[] = [];
   allBreeds: Breed[];
 
-  // colors 
+  // colors
   colors: Color[] = [];
   allColors: Color[];
   constructor(private fb: FormBuilder,
-              private http: HttpClient,
-              private router: Router,
-              public userService: UserService,
-              public breedService: BreedService,
-              public colorService: ColorService,
-              public horseService: HorseService,
-
-  ) { }
+    private http: HttpClient,
+    private router: Router,
+    public userService: UserService,
+    public breedService: BreedService,
+    public colorService: ColorService,
+    public horseService: HorseService,
+    public dialog: MatDialog) { }
 
   //these are some getters to help with readability in the html
   get login() {
@@ -70,6 +72,7 @@ export class SignupPageComponent implements OnInit {
     color: ['']
   })
 
+
   getBreeds(): Breed[] {
     //this.http
     //  .get<{ [key: string]: any }>('http://avellinfalls.com/home/new_account_display_breeds')
@@ -94,7 +97,7 @@ export class SignupPageComponent implements OnInit {
     this.breedService.getBreeds()
       .subscribe(result => {
         console.log(result);
-       let br = result as Array<Breed>;
+        let br = result as Array<Breed>;
         for (let i = 0; i < br.length; i++) {
           let breed = new Breed(br[i].id, br[i].breed, br[i].breed_id);
           this.breeds.push(breed);
@@ -104,25 +107,25 @@ export class SignupPageComponent implements OnInit {
   }
 
   getColors(): Color[] {
-  //  this.http
-  //    .get<{ [key: string]: any }>('http://avellinfalls.com/home/new_account_display_colors')
-  //    .pipe(
-  //      map(responseData => {
-  //        let dataColor: any;
-  //        for (const key in responseData) {
-  //          if (responseData.hasOwnProperty(key)) {
-  //            dataColor = responseData[key]
-  //          }
-  //        }
-  //        return dataColor;
-  //      }))
-  //    .subscribe(data => {
-  //      let cl = data as Array<Color>;
-  //      for (let i = 0; i < cl.length; i++) {
-  //        let color = new Color(cl[i].id, cl[i].color, cl[i].color_id);
-  //        this.colors.push(color);
-  //      }
-  //    })
+    //  this.http
+    //    .get<{ [key: string]: any }>('http://avellinfalls.com/home/new_account_display_colors')
+    //    .pipe(
+    //      map(responseData => {
+    //        let dataColor: any;
+    //        for (const key in responseData) {
+    //          if (responseData.hasOwnProperty(key)) {
+    //            dataColor = responseData[key]
+    //          }
+    //        }
+    //        return dataColor;
+    //      }))
+    //    .subscribe(data => {
+    //      let cl = data as Array<Color>;
+    //      for (let i = 0; i < cl.length; i++) {
+    //        let color = new Color(cl[i].id, cl[i].color, cl[i].color_id);
+    //        this.colors.push(color);
+    //      }
+    //    })
     this.colorService.getColors()
       .subscribe(result => {
         console.log(result);
@@ -137,17 +140,17 @@ export class SignupPageComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signupForm.value);
-     this.userService.createUser(this.signupForm.value)
-        .then(
-          res => {
-            console.log(res.id)
-            // Create random horse
-            this.horseService.createRandomHorse(this.signupForm.value, res.id)
+    this.userService.createUser(this.signupForm.value)
+      .then(
+        res => {
+          console.log(res.id)
+          // Create random horse
+          this.horseService.createRandomHorse(this.signupForm.value, res.id)
           this.router.navigate(['/play']);
-            //this.router.navigate(['/home']);
-          }
-    )
-     //Julias backend
+          //this.router.navigate(['/home']);
+        }
+      )
+    //Julias backend
     //this.http
     //  .post(
     //    'http://avellinfalls.com/home/add_new_user',
@@ -168,5 +171,16 @@ export class SignupPageComponent implements OnInit {
     //    });
 
     //this.router.navigate(['/play']);
+  }
+  openDialog(): void {
+    let dialogRef = this.dialog.open(LoginFormComponent, {
+      panelClass: ['no-padding', 'no-scrolls'],
+      height: '400px',
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('the dialog was closed');
+    });
   }
 }
