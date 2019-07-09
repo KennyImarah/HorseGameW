@@ -21,14 +21,11 @@ export class LoginFormComponent {
     });
   }
   onSubmit() {
-    
     console.log("form submitted");
     console.log(this.form);
     this.userService.loginUsers(this.form.value)
     .subscribe(result => {
       console.log(result);
-      
-      
     })
   }
 }
