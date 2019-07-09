@@ -7,7 +7,7 @@
   z-index: 102;
   position: relative;
   border-collapse: collapse;
-  font-size: 1.2rem;
+  font-size: 14px;
 }
 
 .widget-item {
@@ -19,6 +19,38 @@
   border-radius: 7px 7px 0 0;
   border-top: none;
   line-height: 1.4rem;
-  font-size: 1.3rem;
+  font-size: 15px;
   text-align: center;
+  color: #630;
 }
+
+#care-header, #night-header, #mission-header, #rides-header, #competitions-header, #breeding-header {
+  opacity: 0.4;
+}
+
+.body-background {
+  background-image: url(https://ca.howrse.com/media/equideo/image/background/body/default/body-background-landing-prairie.jpg);
+  top: 0;
+  background-repeat: no-repeat;
+  width: 100%;
+  left: 0;
+  z-index: -1;
+  background-position: center top;
+  position: absolute;
+  height: 1000px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/*.spacer-small-right {
+  margin-right: 5px;
+}*/
+
+.h2, .h3, b, h2, h3, strong {
+  font-weight: 700;
+  margin: 0;
+  padding: 10px 2px 10px 2px;
+}
+
