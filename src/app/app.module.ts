@@ -15,6 +15,8 @@ import { environment } from '../environments/environment';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressBarModule } from '@angular/material';
+
 const routes: Routes = [
   //basic routes
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -41,6 +43,7 @@ const routes: Routes = [
     AngularFirestoreModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
