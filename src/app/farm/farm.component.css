@@ -59,7 +59,8 @@
 }*/
 
 label {
-  margin-right: 6px;
+  padding-right: 10px;
+  padding-left: 3px;
   font-weight: 400;
 }
 
@@ -86,4 +87,5 @@ progress {
     border-radius: 2px;
     background-size: 35px 20px, 100% 100%, 100% 100%;
   }
+
 
