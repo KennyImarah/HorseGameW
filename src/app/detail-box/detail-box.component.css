@@ -70,6 +70,10 @@
   text-align: center;
 }
 
+.table-border > tbody > tr > td {
+  text-align: left;
+}
+
 .table-border > thead > tr > th:last-child {
   border-left: 2px solid #e2da78;
 }
@@ -95,6 +99,7 @@
   width: 46px;
   height: 44px;
   background: url(../../assets/images/sprite.png) -529px 0;
+  margin: 0 auto;
 }
 
 #trophy-silver {
@@ -102,6 +107,7 @@
   height: 44px;
   background: url(../../assets/images/sprite.png) -529px 0;
   filter: grayscale(100%);
+  margin: 0 auto;
 }
 
 #trophy-bronze {
@@ -109,4 +115,5 @@
   height: 44px;
   background: url(../../assets/images/sprite.png) -529px 0;
   filter: hue-rotate(335deg) saturate(1.1);
+  margin: 0 auto;
 }
