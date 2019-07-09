@@ -35,12 +35,14 @@ export class UserService {
       .snapshotChanges()
   }
 
-  loginUsers() {
-    return this.db.collection('/users', ref => ref.where('login', '==', 'julia')
-      .where('password', '==', 'Yd1234567')).valueChanges();
+  loginUsers(value) {
+    let user = this.db.collection('/users', ref => ref.where('login', '==', value.loginEmail)
+      .where('password', '==', value.password)).snapshotChanges();
+    return user;
   }
 
   searchUsersByAge(value){
+
     return this.db.collection('users',ref => ref.orderBy('age').startAt(value)).snapshotChanges();
   }
 
