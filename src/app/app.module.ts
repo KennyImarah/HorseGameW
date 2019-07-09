@@ -12,6 +12,8 @@ import { DetailBoxComponent } from './detail-box/detail-box.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   //basic routes
@@ -25,7 +27,9 @@ const routes: Routes = [
     AppComponent,
     SignupPageComponent,
     FarmComponent,
-    DetailBoxComponent
+    DetailBoxComponent,
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
