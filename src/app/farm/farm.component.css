@@ -1,4 +1,16 @@
-.widget {
+span {
+  font-family: arial narrow;
+}
+
+.checked {
+  color: gold;
+}
+
+
+
+
+
+/*.widget {
   background: #dcdb81;
   border: 1px solid #F5F4C1;
   border-radius: 7px;
@@ -21,4 +33,4 @@
   line-height: 1.4rem;
   font-size: 1.3rem;
   text-align: center;
-}
+}*/
