@@ -34,7 +34,7 @@ const routes: Routes = [
     DetailBoxComponent,
     NavbarComponent,
     LoginComponent,
-    NavbarComponent,
+    //NavbarComponent,
     LoginFormComponent
   ],
   imports: [
