@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -36,8 +37,9 @@ export class LoginComponent implements OnInit {
     console.log(this.form);
     this.userService.loginUsers(this.form.value).subscribe(
         res => {
-        if (res[0].payload.doc._document.key.path.segments[6]) {
-          this.router.navigate(['/play'], { queryParams: { userId: res[0].payload.doc._document.key.path.segments[6] } });
+        if (res[0].payload.doc.id) {
+          AuthService.uid = res[0].payload.doc.id
+          this.router.navigate(['/stable']);
         };
       })
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-farm',
@@ -10,6 +11,7 @@ export class FarmComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(AuthService.uid); //TODO: 
   }
 
 }

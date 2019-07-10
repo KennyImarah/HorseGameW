@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -43,6 +44,8 @@ export class HorseService {
   }
 
   getHorses() {
-    return this.db.collection('/horses').valueChanges()
+    return this.db.collection('/horses', ref => ref.where('userId', '==', AuthService.uid)).snapshotChanges()
+    
+
   }
 }
