@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -11,25 +9,44 @@ import { JsonPipe } from '@angular/common';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  signIn = false;
-  constructor(private fb: FormBuilder,
-              private router: Router,
-              public userService: UserService) { }
+
+  form: FormGroup;
+  public userService: UserService;
+
+  firstName = new FormControl("", Validators.required);
+  loginEmail: any;
+
+  constructor(fb: FormBuilder,
+    userService: UserService,
+    private router: Router,) {
+    this.userService = userService;
+    this.form = fb.group({
+      "loginEmail": this.loginEmail,
+      "password": ["", Validators.required]
+    });
+  }
 
   ngOnInit() {
+
   }
 
-  loginForm = this.fb.group({
-    login: [''],
-    password: [''],
-    stay: ['']
-  })
+  onSubmit() {
+    let userAuth = this.form;
+    console.log("form submitted");
+    console.log(this.form);
+    this.userService.loginUsers(this.form.value).subscribe(
+        res => {
+        if (res[0].payload.doc._document.key.path.segments[6]) {
+          this.router.navigate(['/play'], { queryParams: { userId: res[0].payload.doc._document.key.path.segments[6] } });
+        };
+      })
 
-  onLogin() {
-    console.log(this.loginForm.value);
-    this.userService.loginUsers(this.loginForm.value)
-      .subscribe(
-        res => console.log(res)
-      )
+    // not logged in so redirect to login page with the return url
+    // this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+
   }
-}
+
+  }
+
+
+
