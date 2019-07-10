@@ -7,6 +7,10 @@
   text-align: center;
 }
 
+.flex-btn {
+  position: relative;
+  right: 33%;
+}
 .inscription {
   margin-bottom: 32px;
 }
