@@ -63,9 +63,10 @@ strong {
 
 
 label {
-  padding-right: 10px;
+  padding-right: 60px;
   padding-left: 3px;
   font-weight: 400;
+  float: left;
   /* color: #4a5c1e; */
 }
 
@@ -92,4 +93,12 @@ progress[value]::-webkit-progress-value {
   background: #f1b506;
   border-radius: 2px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+.checkmark {
+  float: right;
+}
+
+#progress-alignment {
+  position:center;
 }
