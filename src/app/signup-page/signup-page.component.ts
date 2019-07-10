@@ -139,12 +139,9 @@ export class SignupPageComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.signupForm.value);
     this.userService.createUser(this.signupForm.value)
       .then(
         res => {
-          console.log(res.id)
-          // Create random horse
           this.horseService.createRandomHorse(this.signupForm.value, res.id)
           this.router.navigate(['/play']);
           //this.router.navigate(['/home']);
