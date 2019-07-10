@@ -1,0 +1,94 @@
+.login-box {
+  position: absolute;
+  left: -100%;
+  background-color: ghostwhite;
+  padding: 1.5rem;
+  z-index: 15;
+  width: 300%;
+}
+  .triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid ghostwhite;
+    position: absolute;
+    top: -10px;
+    left: 49%;
+  }
+
+.close {
+  color: red;
+  position: absolute;
+  right: 0;
+}
+
+.btn {
+  font-weight: 600;
+}
+
+.btn-login {
+  background-color: rgba(255, 255, 255, .25);
+  color: #fff;
+  border: 2px solid #fff;
+  padding: .5rem 2rem;
+}
+
+.btn-submit {
+  background-color: #e3fd6f;
+  color: #59643f;
+  margin: .8rem 0;
+  border: 1px solid #c1d372;
+}
+
+.forgot-pass {
+  color: rgba(0,0,0,.45);
+  text-decoration: underline;
+  display: block;
+  text-align: center;
+}
+
+.divider {
+  overflow: hidden;
+  text-align: center;
+  padding: .5rem 0;
+}
+
+.divider:before,
+.divider:after {
+  background-color: rgba(0,0,0,.15);
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.divider:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.divider:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+label{
+  font-weight: 200;
+}
+
+input[type="checkbox"] {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  bottom: -.3rem;
+  margin: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+::placeholder {
+  font-style:italic;
+}

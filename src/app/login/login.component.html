@@ -1,0 +1,23 @@
+<button type="button" class="btn btn-login" (click)="signIn = true">Login</button>
+
+<div *ngIf="signIn == true">
+  <div class="login-box">
+    <div class="triangle-up"></div>
+    <a class="glyphicon glyphicon-remove close" (click)="signIn = false"></a>
+    <button class="btn btn-primary btn-block">Log in with Facebook</button>
+    <div class="divider">or</div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <input type="text" formControlName="login" placeholder="Login" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Password" formControlName="password" required>
+      </div>
+      <input class="checkbox" type="checkbox" formControlName="stay" name="stay" />
+      <label for="stay">Stay logged in</label>
+      <button type="submit" class="btn btn-submit btn-block" [disabled]="!loginForm.valid">Connection</button>
+    </form>
+    <a class="forgot-pass">Forgotten your password?</a>
+  </div>
+</div>
