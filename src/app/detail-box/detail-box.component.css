@@ -41,6 +41,16 @@
   border-bottom: 1px solid #ffffdf;
 }
 
+.skill-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.genetic-title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .breed {
   color: #930055;
 }
@@ -60,13 +70,13 @@
   border-top: 2px solid #e2da78;
   border-bottom: 0;
   background-image: linear-gradient(#fcfac1, #f6f3b0);
-  padding-bottom: 3px;
+  padding: 0 1rem 3px;
 }
 
 .table > tbody > tr > td {
   border-top: 0;
   background-color: #f6f3b0;
-  padding: 0 8px;
+  padding: 0 1rem;
   text-align: center;
 }
 
