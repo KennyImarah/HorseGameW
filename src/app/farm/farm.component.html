@@ -98,7 +98,7 @@
                             <span class="grid-cell first" style="width:35px;">
                               <img src="/assets/images/sun.png" style="margin: 1px 1px 1px 0px" alt="sun">
                             </span>
-                            <span class="grid-cell last">08:00: Strawberry has just woken up</span>
+                            <span class="grid-cell last">08:00: {{horse.name}} has just woken up</span>
                           </li>
                         </ul>
                       </div>
@@ -138,7 +138,7 @@
                         <ul class="grid-table list-unstyled">
                           <li>
                             <label for="progress">Stamina</label>
-                            <progress id="progress-alignment" max="100" value="98"> 98% </progress>
+                            <progress id="progress-alignment" max="100" value="{{horse.tr_stamina}}"> {{horse.tr_stamina}}% </progress>
                             <span class="grid-cell first" style="width:35px;">
                               <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
                             </span>
