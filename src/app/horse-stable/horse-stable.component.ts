@@ -35,9 +35,6 @@ export class HorseStableComponent implements OnInit {
         //    return { id, ...data };
         //  });
         //});
-
-
       });
   }
-
 }
