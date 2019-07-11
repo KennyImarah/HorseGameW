@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     this.userService.loginUsers(this.form.value).subscribe(
         res => {
         if (res[0].payload.doc.id) {
-          AuthService.uid = res[0].payload.doc.id
+         new AuthService(res[0].payload.doc.id)
           this.router.navigate(['/stable']);
         };
       })
