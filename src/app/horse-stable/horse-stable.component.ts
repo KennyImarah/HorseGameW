@@ -28,7 +28,6 @@ export class HorseStableComponent implements OnInit {
           this.horses.push(res[i]);
         }
 
-        
         //this.horses = this.horsesCollection.snapshotChanges().map(actions => {
         //  return actions.map(a => {
         //    const data = a.payload.doc.data() as Horse;
@@ -38,7 +37,7 @@ export class HorseStableComponent implements OnInit {
         //});
 
 
-      })
+      });
   }
 
 }

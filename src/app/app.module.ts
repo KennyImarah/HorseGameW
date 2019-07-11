@@ -20,10 +20,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HorseStableComponent } from './horse-stable/horse-stable.component';
 
 const routes: Routes = [
-  //basic routes
+  // basic routes
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: SignupPageComponent },
   { path: 'play', component: FarmComponent },
+  { path: 'play/:id', component: FarmComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'stable', component: HorseStableComponent }
 ];
@@ -36,7 +37,7 @@ const routes: Routes = [
     DetailBoxComponent,
     NavbarComponent,
     LoginComponent,
-    //NavbarComponent,
+    // NavbarComponent,
     LoginFormComponent,
     HorseStableComponent
   ],
