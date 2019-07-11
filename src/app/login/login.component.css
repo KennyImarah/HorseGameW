@@ -64,9 +64,6 @@ label {
 
 } 
 
-
-
-
 .dropdown-toggle::after {
   display: none;
 }
@@ -76,7 +73,6 @@ dropdown-item.active, .dropdown-item:active {
   text-decoration: none;
   background-color: #fff;
 }
-
 
   .new {
   display: block;
