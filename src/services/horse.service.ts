@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from './auth.service';
+import { Observable } from 'rxjs';
+import { Horse } from '../app/horse';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +46,15 @@ export class HorseService {
     });
   }
 
-  getHorses() {
-    return this.db.collection('/horses').valueChanges()
+  getHorses(): Observable<Horse[]> {
+    return this.db.collection('/horses', ref => ref.where('userId', '==', sessionStorage.getItem('uid'))).snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data() as Horse
+          const id = a.payload.doc.id
+          return { id, ...data };
+        })
+      })
+    )
   }
 }

@@ -17,13 +17,16 @@ import { LoginFormComponent } from './login-form/login-form.component';
 // import { LoginModalComponent } from './login-modal/login-modal.component';
 import { MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HorseStableComponent } from './horse-stable/horse-stable.component';
 
 const routes: Routes = [
-  //basic routes
+  // basic routes
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: SignupPageComponent },
   { path: 'play', component: FarmComponent },
-  { path: 'login', component: LoginFormComponent }
+  { path: 'play/:id', component: FarmComponent },
+  { path: 'login', component: LoginFormComponent },
+  { path: 'stable', component: HorseStableComponent }
 ];
 
 @NgModule({
@@ -34,8 +37,9 @@ const routes: Routes = [
     DetailBoxComponent,
     NavbarComponent,
     LoginComponent,
-    //NavbarComponent,
-    LoginFormComponent
+    // NavbarComponent,
+    LoginFormComponent,
+    HorseStableComponent
   ],
   imports: [
     BrowserModule,
